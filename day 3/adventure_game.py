@@ -68,13 +68,13 @@ fight_with_gnomes = "You Ugly Pricks I Rid the World from your Nasty Greed Of Go
 
 if choice == "left":
     if strength > 5:
-        print(f"you win.\n {battle_with_troll}\n You Get A Chest After Defeeating The monsters. \n The chest is filled with Gold.You gain +15 points and unlock the Treasure Hunter title!")
+        print(f"you win.\n\n {battle_with_troll}\n\nYou Get A Chest After Defeeating The monsters.\n\nThe chest is filled with Gold.You gain +15 points and unlock the Treasure Hunter title!")
     else:
-        print("you lose")
+        print("you lose because you were not strong enough")
 elif choice == "right":
     if speed > 5:
-        print(f"you win.\n {fight_with_gnomes}\n You Get A Chest After Defeeating The monsters. \n The chest is filled with Gold.You gain +15 points and unlock the Treasure Hunter title!")
+        print(f"you win.\n\n{fight_with_gnomes}\n\nYou Get A Chest After Defeeating The monsters.\n\nThe chest is filled with Gold.You gain +15 points and unlock the Treasure Hunter title!")
     else:
-        print("you lose")
+        print("you lose because you were not fast enough")
 else:
     print("You Died")
