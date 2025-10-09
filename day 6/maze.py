@@ -1,4 +1,4 @@
-def turn_right():
+'''def turn_right():
     turn_left()
     turn_left()
     turn_left()
@@ -12,4 +12,4 @@ while not at_goal():
     elif wall_in_front():
         turn_left()
     elif wall_on_right():
-        turn_left()
+        turn_left()'''
