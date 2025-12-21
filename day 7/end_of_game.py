@@ -1,7 +1,9 @@
 import random
+import hangman_words
+import hangman_art
 
-word_list = ["ardvark","baboon","camel"]
-chosen_word = random.choice(word_list)
+
+chosen_word = random.choice(hangman_words.word_list)
 
 print(f'Pssst, the solution is {chosen_word}.')
 

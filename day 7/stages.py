@@ -51,8 +51,8 @@ stages = ['''
       |
 =========''']
 
-word_list = ["ardvark","baboon","camel"]
-chosen_word = random.choice(word_list)
+import hangman_words 
+chosen_word = random.choice(hangman_words.word_list)
 
 print(f'Pssst, the solution is {chosen_word}.')
 
