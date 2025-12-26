@@ -8,3 +8,5 @@ def format_name(f_name,l_name):
 formated_string = format_name(f_name="shalim",l_name="kEITH")
 
 print(formated_string)
+
+output = len("Shalim")
