@@ -145,7 +145,8 @@ screen = Screen()
 # jason.right(36)
 # jason.forward(100)
 
-colours = ["cyan", "magenta", "gold", "silver", "maroon", "navy",
+colours = [
+"cyan", "magenta", "gold", "silver", "maroon", "navy",
 "lime", "olive", "teal", "indigo", "violet","red", "blue", "green", "yellow", "black",
 "orange", "purple", "brown", "pink", "gray"
 ]
