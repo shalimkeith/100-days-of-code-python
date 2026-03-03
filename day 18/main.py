@@ -32,12 +32,12 @@
 #
 # screen.exitonclick()
 
-from turtle import Turtle,Screen
-import random
-
-
-jason = Turtle()
-screen = Screen()
+# from turtle import Turtle,Screen
+# import random
+#
+#
+# jason = Turtle()
+# screen = Screen()
 #
 # jason.forward(100)
 # jason.right(120)
@@ -144,19 +144,36 @@ screen = Screen()
 # jason.forward(100)
 # jason.right(36)
 # jason.forward(100)
+#
+# colours = [
+# "gold", "silver", "maroon", "navy",
+#  "teal", "indigo", "violet","red", "blue", "green", "yellow", "black",
+# "orange", "purple"
+# ]
+#
+# def draw_shape(num_sides):
+#     angle = 360 / num_sides
+#     for _ in range(num_sides):
+#         jason.forward(100)
+#         jason.right(angle)
+#
+# for shape_side_n in range(3,11):
+#     jason.color(random.choice(colours))
+#     draw_shape(shape_side_n)
+
+import turtle as t
+import random
 
 colours = [
 "gold", "silver", "maroon", "navy",
  "teal", "indigo", "violet","red", "blue", "green", "yellow", "black",
 "orange", "purple"
 ]
+tim = t.Turtle()
+directions = [0,90,180,270]
 
-def draw_shape(num_sides):
-    angle = 360 / num_sides
-    for _ in range(num_sides):
-        jason.forward(100)
-        jason.right(angle)
 
-for shape_side_n in range(3,11):
-    jason.color(random.choice(colours))
-    draw_shape(shape_side_n)
+for _ in range(100):
+    tim.forward(30)
+    tim.setheading(random.choice(directions))
+
