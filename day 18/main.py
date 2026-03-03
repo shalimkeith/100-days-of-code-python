@@ -146,9 +146,9 @@ screen = Screen()
 # jason.forward(100)
 
 colours = [
-"cyan", "magenta", "gold", "silver", "maroon", "navy",
-"lime", "olive", "teal", "indigo", "violet","red", "blue", "green", "yellow", "black",
-"orange", "purple", "brown", "pink", "gray"
+"gold", "silver", "maroon", "navy",
+ "teal", "indigo", "violet","red", "blue", "green", "yellow", "black",
+"orange", "purple"
 ]
 
 def draw_shape(num_sides):
