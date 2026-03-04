@@ -13,7 +13,7 @@ def random_color():
     color = (r, g, b)
     return color
 
-tim.speed("fastest")
+tim.speed(1000)
 
 
 
@@ -23,9 +23,9 @@ def draw_spirograph(size_of_gap):
         tim.circle(100)
         tim.setheading(tim.heading() + size_of_gap)
 
-draw_spirograph(5)
+draw_spirograph(1)
 
-screen = t.Screen
+screen = t.Screen()
 
 
 
