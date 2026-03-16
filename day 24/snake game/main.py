@@ -3,7 +3,7 @@ from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
 import time
-
+import os
 screen = Screen()
 screen.setup(width = 600, height = 600)
 screen.bgcolor("black")
@@ -52,4 +52,4 @@ while game_is_on:
             snake.reset()
     # if head collides with tail we trigger game_over
 
-screen.exitonclick()
+screen.mainloop()
