@@ -1,8 +1,5 @@
-with open("my_file.txt") as file:
-    contents = file.read()
-    print(contents)
+import os
 
-
-with open("new_file.txt", mode = "w") as file:
-    contents = file.write("\nrun new feature")
-    print(contents)
+print("Current directory:", os.getcwd())
+print("Files here:", os.listdir("."))
+print("Files one level up:", os.listdir(".."))
