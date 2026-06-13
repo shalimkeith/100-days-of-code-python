@@ -8,13 +8,15 @@ def button_clicked():
 
 window = Tk()
 window.title("My First GUI")
-window.minsize(width=400, height=500)
-window.config(padx=20, pady=20)
+window.minsize(width=400, height=400)
+window.config(padx=40, pady=40)
 
 
 my_label = Label(text="My First GUI", font=("Arial", 25,"bold") )
 my_label.config(text="New Text")
 my_label.grid(column=0, row=0)
+my_label.config(padx=40, pady=40)
+
 
 button = Button(text="Button", command=button_clicked)
 button.grid(column=1, row=1)
