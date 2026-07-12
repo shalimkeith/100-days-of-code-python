@@ -1,4 +1,5 @@
 import math
+from asyncio.windows_events import NULL
 from tkinter import *
 import time
 
@@ -8,17 +9,45 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 25
-SHORT_BREAK_MIN = 5
+WORK_MIN = 1
+SHORT_BREAK_MIN = 25
 LONG_BREAK_MIN = 20
+reps = 0
+timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
-
+def reset_timer():
+    window.after_cancel(timer)
+    canvas.itemconfig(timer_text, text="00:00")
+    title_label.config(text="Timer", fg=GREEN, bg=YELLOW)
+    check_marks.config(text="")
+    global reps
+    reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
-    count_down(25*60)
+    global reps
+    reps += 1
+
+    work_reps = WORK_MIN * 60
+    long_break_reps = LONG_BREAK_MIN * 60
+    short_break_reps = SHORT_BREAK_MIN * 60
+
+
+
+    if reps % 8 == 0:
+        count_down(long_break_reps)
+        title_label.config(text="Break", fg=RED, bg=YELLOW)
+    elif reps % 2 == 0:
+        count_down(short_break_reps)
+        title_label.config(text="Break", fg=PINK, bg=YELLOW)
+    else:
+        title_label.config(text="WORK", fg=RED, bg=YELLOW)
+        count_down(work_reps)
+
+
+
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -27,10 +56,27 @@ def count_down(count):
     count_min = math.floor(count / 60)
     count_sec = math.floor(count % 60)
 
+    if count_min == 0:
+        count_min = "00"
+    elif count_min < 10:
+        count_min = "0" + str(count_min)
+
+    if count_sec == 0:
+        count_sec = "00"
+    elif count_sec < 10:
+        count_sec = "0" + str(count_sec)
+
     canvas.itemconfig(timer_text,text=f"{count_min}:{count_sec}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
-
+        global timer
+        timer = window.after(1000, count_down, count - 1)
+    else:
+        start_timer()
+        marks = ""
+        work_session = math.floor(reps/2)
+        for _ in range (work_session):
+            marks += "✔️"
+        check_marks.config(text=marks)
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -52,10 +98,10 @@ title_label.grid(column=1, row=0)
 start_button = Button(text="Start",highlightthickness=0,command=start_timer)
 start_button.grid(column=0, row=2)
 
-reset_label = Button(text="Reset",highlightthickness=0)
+reset_label = Button(text="Reset",highlightthickness=0,command=reset_timer)
 reset_label.grid(column=2, row=2)
 
-check_marks = Label(text="✔️",fg=GREEN,bg=YELLOW)
+check_marks = Label(fg=GREEN,bg=YELLOW)
 check_marks.grid(column=1, row=3)
 
 
