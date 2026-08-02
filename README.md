@@ -78,7 +78,7 @@ Progress: **32% Complete**
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/100-days-of-code.git
+git clone https://github.com/shalimkeith/100-days-of-code-python
 ```
 
 Move into a project folder:
