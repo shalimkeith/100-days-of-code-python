@@ -8,7 +8,7 @@ MY_PASSWORD = "oifx fwed ytli snaa"
 
 now = dt.datetime.now()
 weekday = now.weekday()
-if weekday == 6:
+if weekday == 0:
     with open("quotes.txt") as file:
         all_quotes = file.readlines()
         quote = random.choice(all_quotes)
@@ -19,7 +19,7 @@ if weekday == 6:
         connection.login(user=MY_EMAIL, password=MY_PASSWORD)
         connection.sendmail(
             from_addr=MY_EMAIL,
-            to_addrs = "shalimkeith@gmail.com",
+            to_addrs = "tahayounus3@gmail.com",
             msg = f"Subject:Quote Of the Day !!!"
                   f"\n\n{quote}"
         )
